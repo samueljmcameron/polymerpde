@@ -41,13 +41,13 @@ public:
   void update_C(Eigen::Vector3d& );
 
   void init_R();
+  double kappa;         // bending modulus
   
 private:
   const int N;                // number of grid spaces (N+1 grid points)
   const double L;             // arc length
   const double Delta_t;       // time discretisation
   const double Delta_s;       // arc length discretisation
-  const double kappa;         // bending modulus
   
   double alpha;         // ratio Delta_s^4/Delta_t
   double set_s_i_plus(int ); // 
