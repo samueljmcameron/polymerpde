@@ -1,6 +1,6 @@
 
-#ifndef POLYMER_HPP
-#define POLYMER_HPP
+#ifndef ZEROKAPPAPOLYMER_HPP
+#define ZEROKAPPAPOLYMER_HPP
 
 #include <Eigen/Core>
 #include <Eigen/Sparse>
@@ -10,7 +10,7 @@
 typedef Eigen::SparseMatrix<double> SpMat; // declares column-major
 typedef Eigen::Triplet<double> T;
 
-class Polymer : public Base {
+class ZeroKappaPolymer : public Base {
 public:
   
 
@@ -22,8 +22,8 @@ public:
   
 
   // constructor
-  Polymer(int,double,double,double,Eigen::Vector3d);
-  ~Polymer();  
+  ZeroKappaPolymer(int,double,double,Eigen::Vector3d);
+  ~ZeroKappaPolymer();  
   Eigen::VectorXd s_i_plus_vec();
   Eigen::VectorXd s_i_minus_vec();
   
@@ -33,8 +33,7 @@ public:
 
   void update_C(Eigen::Vector3d& );
 
-  void init_R(Eigen::Vector3d& );
-  double kappa;         // bending modulus
+  void init_R(double,Eigen::Vector3d& );
   
 private:
 
@@ -44,12 +43,10 @@ private:
   double set_s_i_plus(int );
   double set_s_i_minus(int );
 
+
+  
   std::vector<T> init_A_coeffsmatrix();
 
-
-
-  double set_c_i_last(int );
-  double set_c_i(int );
 
 
   

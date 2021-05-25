@@ -7,6 +7,8 @@ project(poly VERSION 1.0 DESCRIPTION "Single tethered polymer dynamics"
         LANGUAGES CXX)
 
 
+add_compile_options(-O3)
+
 
 
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
